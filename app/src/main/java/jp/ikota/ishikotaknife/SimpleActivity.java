@@ -4,13 +4,22 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+import jp.ishikotaknife.IshikotaBind;
+
+public class SimpleActivity extends AppCompatActivity {
+
+    @IshikotaBind(R.id.text)
+    TextView mTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // TODO mTextView is null now !! Please inject !!
+        mTextView.setText("We injected !!");
     }
 
     @Override
