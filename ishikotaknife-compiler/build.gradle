@@ -2,4 +2,10 @@ apply plugin: 'java'
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile project(':ishikotaknife-annotations')
+
+    testCompile 'junit:junit:4.12'
+    testCompile 'com.google.testing.compile:compile-testing:0.7'
+    testCompile 'com.google.android:android:4.1.1.4'  // use in processor test
+
 }
