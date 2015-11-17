@@ -1,1 +1,1 @@
-include ':app', ':ishikotaknife-annotations', ':ishikotaknife-compiler'
+include ':app', ':ishikotaknife-annotations', ':ishikotaknife-compiler', ':ishikotaknife'
