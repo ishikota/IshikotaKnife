@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import jp.ishikotaknife.IshikotaBind;
+import jp.ishikotaknife.IshikotaKnife;
 
 public class SimpleActivity extends AppCompatActivity {
 
@@ -18,7 +19,7 @@ public class SimpleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // TODO mTextView is null now !! Please inject !!
+        IshikotaKnife.bind(this);
         mTextView.setText("We injected !!");
     }
 

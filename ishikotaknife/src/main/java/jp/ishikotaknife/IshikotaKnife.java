@@ -1,4 +1,4 @@
-package jp.ikota.ishikotaknife;
+package jp.ishikotaknife;
 
 
 import android.app.Activity;
