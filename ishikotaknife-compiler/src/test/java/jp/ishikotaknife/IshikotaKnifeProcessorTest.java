@@ -21,27 +21,35 @@ public class IshikotaKnifeProcessorTest {
                 "package test;",
                 "import android.app.Activity;",
                 "import android.widget.TextView;",
+                "import android.widget.ImageView;",
                 "import jp.ishikotaknife.IshikotaBind;",
                 "public class MyActivity extends Activity {",
                 "  @IshikotaBind(1) TextView mTextView;",
+                "  @IshikotaBind(2) TextView mTextView2;",
+                "  @IshikotaBind(3) ImageView mImageView;",
+                "  ImageView mImageView2;",
                 "}")
         );
+
         JavaFileObject expectedSource = JavaFileObjects.forSourceString("test/MyActivity$$IshikotaViewBinder",
                 Joiner.on('\n').join(
                         "package test;",
-                        "import android.app.Activity;",
+                        "import android.widget.ImageView;",
                         "import android.widget.TextView;",
-                        "public class Test$$IshikotaViewBinder {",
+                        "public class MyActivity$$IshikotaViewBinder {",
                         "  public void bind(MyActivity target) {",
                         "    ((MyActivity)target).mTextView = (TextView)target.findViewById(1);",
+                        "    ((MyActivity)target).mTextView2 = (TextView)target.findViewById(2);",
+                        "    ((MyActivity)target).mImageView = (ImageView)target.findViewById(3);",
                         "  }",
                         "}"
                 ));
+
         assert_().about(javaSource())
                 .that(source)
                 .processedWith(new IshikotaKnifeProcessor())
-                .compilesWithoutError();
-//                .and()
-//                .generatesSources(expectedSource);
+                .compilesWithoutError()
+                .and()
+                .generatesSources(expectedSource);
     }
 }

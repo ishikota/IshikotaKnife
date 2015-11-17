@@ -28,6 +28,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="ishikotaknife-annotations" exported="" />
+    <orderEntry type="library" exported="" name="javapoet-1.1.0" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="junit-4.12" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="compile-testing-0.7" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="android-4.1.1.4" level="project" />
