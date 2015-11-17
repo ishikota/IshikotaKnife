@@ -1,5 +1,6 @@
 package jp.ishikotaknife;
 
+import com.google.auto.service.AutoService;
 import com.squareup.javapoet.ClassName;
 import com.squareup.javapoet.JavaFile;
 import com.squareup.javapoet.MethodSpec;
@@ -12,7 +13,9 @@ import java.util.Set;
 import javax.annotation.processing.AbstractProcessor;
 import javax.annotation.processing.Filer;
 import javax.annotation.processing.ProcessingEnvironment;
+import javax.annotation.processing.Processor;
 import javax.annotation.processing.RoundEnvironment;
+import javax.lang.model.SourceVersion;
 import javax.lang.model.element.AnnotationMirror;
 import javax.lang.model.element.AnnotationValue;
 import javax.lang.model.element.Element;
@@ -24,6 +27,7 @@ import javax.lang.model.util.ElementFilter;
 import javax.lang.model.util.Elements;
 import javax.lang.model.util.Types;
 
+@AutoService(Processor.class)
 public class IshikotaKnifeProcessor extends AbstractProcessor{
 
     private static final String ISHIKOTA_KNIFE_SUFFIX = "$$IshikotaViewBinder";
@@ -46,7 +50,13 @@ public class IshikotaKnifeProcessor extends AbstractProcessor{
     }
 
     @Override
+    public SourceVersion getSupportedSourceVersion() {
+        return SourceVersion.latestSupported();
+    }
+
+    @Override
     public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {
+        System.out.println("Processing");
         // for all class which has IshikotaBind annotation
         for(Element e : roundEnv.getElementsAnnotatedWith(IshikotaBind.class)) {
             String packageName = processingEnv.getElementUtils().getPackageOf(e).toString();
@@ -80,6 +90,8 @@ public class IshikotaKnifeProcessor extends AbstractProcessor{
             result.addMethod(method.build());
 
             JavaFile javaFile = JavaFile.builder(packageName, result.build()).build();
+            System.out.println("packageName: "+packageName);
+            System.out.println("result: "+result.build().toString());
             try {
                 javaFile.writeTo(filer);
             } catch (IOException error) {

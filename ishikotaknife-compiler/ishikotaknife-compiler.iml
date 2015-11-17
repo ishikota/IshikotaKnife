@@ -29,6 +29,9 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="ishikotaknife-annotations" exported="" />
     <orderEntry type="library" exported="" name="javapoet-1.1.0" level="project" />
+    <orderEntry type="library" exported="" name="auto-service-1.0-rc2" level="project" />
+    <orderEntry type="library" exported="" name="auto-common-0.3" level="project" />
+    <orderEntry type="library" exported="" name="guava-18.0" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="junit-4.12" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="compile-testing-0.7" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="android-4.1.1.4" level="project" />
@@ -42,7 +45,6 @@
     <orderEntry type="library" exported="" scope="TEST" name="json-20080701" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="httpcore-4.0.1" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="commons-codec-1.3" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="guava-17.0" level="project" />
     <orderEntry type="library" exported="" name="ishikotaknife-compiler.ishikotaknife-compiler" level="project" />
   </component>
 </module>
