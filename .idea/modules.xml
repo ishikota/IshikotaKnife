@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/IshikotaKnife.iml" filepath="$PROJECT_DIR$/IshikotaKnife.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ishikotaknife-annotations/ishikotaknife-annotations.iml" filepath="$PROJECT_DIR$/ishikotaknife-annotations/ishikotaknife-annotations.iml" />
     </modules>
   </component>
 </project>
