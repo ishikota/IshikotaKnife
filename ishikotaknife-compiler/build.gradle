@@ -1,4 +1,5 @@
 apply plugin: 'java'
+apply plugin: 'bintray-release'
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
@@ -7,7 +8,16 @@ dependencies {
     compile 'com.google.auto.service:auto-service:1.0-rc2'
 
     testCompile 'junit:junit:4.12'
-    testCompile 'com.google.testing.compile:compile-testing:0.7'
+    testCompile 'com.google.testing.compile:compile-testing:0.6'
     testCompile 'com.google.android:android:4.1.1.4'  // use in processor test
 
+}
+
+publish {
+    userOrg = 'ishikota'
+    groupId = 'jp.ikota'
+    artifactId = 'ishikotaknife-compiler'
+    publishVersion = '0.0.1'
+    desc = 'Simple View injection framework for learning annotation processing, javapoet, compile-testing'
+    website = 'https://github.com/ishikota/IshikotaKnife'
 }

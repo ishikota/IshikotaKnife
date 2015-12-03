@@ -1,5 +1,15 @@
 apply plugin: 'java'
+apply plugin: 'bintray-release'
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+}
+
+publish {
+    userOrg = 'ishikota'
+    groupId = 'jp.ikota'
+    artifactId = 'ishikotaknife-annotations'
+    publishVersion = '0.0.1'
+    desc = 'Simple View injection framework for learning annotation processing, javapoet, compile-testing'
+    website = 'https://github.com/ishikota/IshikotaKnife'
 }
